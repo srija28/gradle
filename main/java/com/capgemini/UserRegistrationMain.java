@@ -45,7 +45,7 @@ public class UserRegistrationMain {
 	public void mobileValidator() {
 		System.out.println("Enter your mobile number");
 		String mobile = sc.next();
-		Pattern pattern = Pattern.compile("^\\\\d{2} [1-9]\\\\d{9}$");
+		Pattern pattern = Pattern.compile("^\\d{2} [1-9]\\d{9}$");
 		Matcher matcher = pattern.matcher(mobile);
 		Boolean matchFound = matcher.find();
 		if (matchFound) {
@@ -57,7 +57,7 @@ public class UserRegistrationMain {
 	public void passwordValidator() {
 		System.out.println("Enter your password");
 		String password = sc.next();
-		Pattern pattern = Pattern.compile("^\\S{8,}$");
+		Pattern pattern = Pattern.compile("^.*[A-Z]+(\\S){7,}$");
 		Matcher matcher = pattern.matcher(password);
 		Boolean matchFound = matcher.find();
 		if (matchFound) {
