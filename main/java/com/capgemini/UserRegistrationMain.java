@@ -6,9 +6,8 @@ import java.util.*;
 
 public class UserRegistrationMain {
 	Scanner sc = new Scanner(System.in);
-	public void firstNameValidator() {
-		System.out.println("Enter your first name");
-		String firstName = sc.next();
+	public boolean firstNameValidator(String firstName)  {
+		
 		Pattern pattern = Pattern.compile("^([A-Z])[a-zA-Z]{2,}$");
 		Matcher matcher = pattern.matcher(firstName);
 		Boolean matchFound = matcher.find();
@@ -17,10 +16,10 @@ public class UserRegistrationMain {
 		} else {
 			System.out.println("Please check your input");
 		}
+		return matchFound;
 	}
-	public void lastNameValidator() {
-		System.out.println("Enter your last name");
-		String lastName = sc.next();
+	public boolean lastNameValidator(String lastName){
+		
 		Pattern pattern = Pattern.compile("^([A-Z])[a-zA-Z]{2,}$");
 		Matcher matcher = pattern.matcher(lastName);
 		Boolean matchFound = matcher.find();
@@ -29,10 +28,12 @@ public class UserRegistrationMain {
 		} else {
 			System.out.println("Please check your input");
 		}
+		
+		return matchFound;
+		
 	}
-	public void emailValidator() {
-		System.out.println("Enter your email");
-		String email = sc.next();
+	public boolean emailValidator(String email){
+		
 		Pattern pattern = Pattern.compile("^([a-z]){1,}([.+_-]){0,1}[0-9a-z]*(@){1}([0-9a-z]*)(.([a-z]){2,}){1}(.[a-z][a-z])?$");
 		Matcher matcher = pattern.matcher(email);
 		Boolean matchFound = matcher.find();
@@ -41,10 +42,9 @@ public class UserRegistrationMain {
 		} else {
 			System.out.println("Please check your input");
 		}
+		return matchFound;
 	}
-	public void mobileValidator() {
-		System.out.println("Enter your mobile number");
-		String mobile = sc.next();
+	public boolean mobileValidator(String mobile) {
 		Pattern pattern = Pattern.compile("^\\d{2} [1-9]\\d{9}$");
 		Matcher matcher = pattern.matcher(mobile);
 		Boolean matchFound = matcher.find();
@@ -53,10 +53,12 @@ public class UserRegistrationMain {
 		} else {
 			System.out.println("Please check your input");
 		}
+		
+		return matchFound;
+		
 	}
-	public void passwordValidator() {
-		System.out.println("Enter your password");
-		String password = sc.next();
+	public boolean passwordValidator(String password) {
+
 		Pattern pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
 		Matcher matcher = pattern.matcher(password);
 		Boolean matchFound = matcher.find();
@@ -66,19 +68,13 @@ public class UserRegistrationMain {
 			System.out.println("Please check your input");
 		}
 		
+		return matchFound;
+		
 	}
  
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration Page");
-		
-		UserRegistrationMain u = new UserRegistrationMain();
-		u.firstNameValidator();
-		u.lastNameValidator();
-		u.emailValidator();
-		u.mobileValidator();
-		u.passwordValidator();
-
 	}
 
 }
