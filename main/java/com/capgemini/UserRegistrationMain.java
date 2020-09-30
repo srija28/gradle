@@ -42,6 +42,18 @@ public class UserRegistrationMain {
 			System.out.println("Please check your input");
 		}
 	}
+	public void mobileValidator() {
+		System.out.println("Enter your mobile number");
+		String mobile = sc.next();
+		Pattern pattern = Pattern.compile("^\\\\d{2} [1-9]\\\\d{9}$");
+		Matcher matcher = pattern.matcher(mobile);
+		Boolean matchFound = matcher.find();
+		if (matchFound) {
+			System.out.println("Mobile Number is Validated");
+		} else {
+			System.out.println("Please check your input");
+		}
+	}
  
 
 	public static void main(String[] args) {
@@ -51,6 +63,7 @@ public class UserRegistrationMain {
 		u.firstNameValidator();
 		u.lastNameValidator();
 		u.emailValidator();
+		u.mobileValidator();
 
 	}
 
