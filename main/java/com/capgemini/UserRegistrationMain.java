@@ -57,7 +57,7 @@ public class UserRegistrationMain {
 	public void passwordValidator() {
 		System.out.println("Enter your password");
 		String password = sc.next();
-		Pattern pattern = Pattern.compile("^.*[A-Z]+(\\S){7,}$");
+		Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9]).{8,}");
 		Matcher matcher = pattern.matcher(password);
 		Boolean matchFound = matcher.find();
 		if (matchFound) {
