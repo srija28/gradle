@@ -7,21 +7,20 @@ public class UserRegistrationMain {
 	public void firstNameValidator(String firstName) {
 		Pattern pattern = Pattern.compile("^([A-Z])[a-zA-Z]{2,}$");
 		Matcher matcher = pattern.matcher(firstName);
-		Boolean b = matcher.find();
-        if(b)
+		Boolean matchFound = matcher.find();
+        if(matchFound)
         	System.out.println("First Name is Validated");
         else
-        	System.out.println("Please enter the name as mentioned");
+        	System.out.println("Please check your input");
         
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration Page");
         System.out.println("Enter your first name :");
-        System.out.println("First letter should be capital and shuold have min 3 characters");
-        Scanner in = new Scanner(System.in);
-        UserRegistrationMain newUser = new UserRegistrationMain();
-        newUser.firstNameValidator(in.next());
+        Scanner sc = new Scanner(System.in);
+        UserRegistrationMain u = new UserRegistrationMain();
+        u.firstNameValidator(sc.next());
 	}
 
 }
