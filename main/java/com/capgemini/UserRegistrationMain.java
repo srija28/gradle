@@ -54,6 +54,19 @@ public class UserRegistrationMain {
 			System.out.println("Please check your input");
 		}
 	}
+	public void passwordValidator() {
+		System.out.println("Enter your password");
+		String password = sc.next();
+		Pattern pattern = Pattern.compile("^\\S{8,}$");
+		Matcher matcher = pattern.matcher(password);
+		Boolean matchFound = matcher.find();
+		if (matchFound) {
+			System.out.println("Password is Validated");
+		} else {
+			System.out.println("Please check your input");
+		}
+		
+	}
  
 
 	public static void main(String[] args) {
@@ -64,6 +77,7 @@ public class UserRegistrationMain {
 		u.lastNameValidator();
 		u.emailValidator();
 		u.mobileValidator();
+		u.passwordValidator();
 
 	}
 
