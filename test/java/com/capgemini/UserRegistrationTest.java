@@ -9,7 +9,7 @@ public class UserRegistrationTest {
 	public void givenFirstName_Proper_ReturnTrue() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.firstNameValidator("Shreya");
+		boolean result = user.firstNameValidator.validate("Shreya");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -21,7 +21,7 @@ public class UserRegistrationTest {
 	public void givenFirstName_Improper_ReturnFalse() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.firstNameValidator("shreya");
+		boolean result = user.firstNameValidator.validate("shreya");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -33,7 +33,7 @@ public class UserRegistrationTest {
 	public void givenLastName_Proper_ReturnTrue() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.lastNameValidator("Reddy");
+		boolean result = user.lastNameValidator.validate("Reddy");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -45,7 +45,7 @@ public class UserRegistrationTest {
 	public void givenLastName_Improper_ReturnFalse() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.lastNameValidator("reddy");
+		boolean result = user.lastNameValidator.validate("reddy");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -56,7 +56,7 @@ public class UserRegistrationTest {
 	public void givenEmail_Proper_ReturnTrue() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.emailValidator("shreya.reddy@yahoo.co.in");
+		boolean result = user.emailValidator.validate("shreya.reddy@yahoo.co.in");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -68,7 +68,7 @@ public class UserRegistrationTest {
 	public void givenEmail_Imroper_ReturnFalse() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.emailValidator("fffhhhh");
+		boolean result = user.emailValidator.validate("fffhhhh");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -80,7 +80,7 @@ public class UserRegistrationTest {
 	public void givenPassword_Proper_ReturnTrue() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.passwordValidator("Shreya@57");
+		boolean result = user.passwordValidator.validate("Shreya@57");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -92,7 +92,7 @@ public class UserRegistrationTest {
 	public void givenPassword_Imroper_ReturnFalse() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.passwordValidator("fff");
+		boolean result = user.passwordValidator.validate("fff");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -104,7 +104,7 @@ public class UserRegistrationTest {
 	public void givenMobileNo_Proper_ReturnTrue() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.mobileValidator("91 9100887766");
+		boolean result = user.mobileValidator.validate("91 9100887766");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
@@ -116,7 +116,7 @@ public class UserRegistrationTest {
 	public void givenMobileNo_Improper_ReturnFalse() {
 		UserRegistrationMain user = new UserRegistrationMain();
 		try {
-		boolean result = user.mobileValidator("5757");
+		boolean result = user.mobileValidator.validate("5757");
 		Assert.assertTrue(true);
 		}catch(UserRegistrationException e) {
         	Assert.assertEquals("Please check your input", e.getMessage());
